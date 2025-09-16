@@ -1,6 +1,6 @@
 export default function verify(){
     return(
-        <div>hello Auth</div>
+        <div className="text-4xl bg-amber-950">hello Auth</div>
     
     );
 }
