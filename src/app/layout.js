@@ -1,13 +1,105 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+
+const esRebound = localFont({
+  variable: "--font-rebound",
+  src: [
+    {
+      path: "../../fonts/esrebound/Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/BoldItalic.otf",
+      weight: "700",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/extraBold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/extraBoldItalic.otf",
+      weight: "800",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/Italic.otf",
+      weight: "400",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/LightItalic.otf",
+      weight: "300",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/Thin.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/ThinItalic.otf",
+      weight: "100",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/SemiBoldItalic.otf",
+      weight: "600",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/extraLight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/extraLightItalic.otf",
+      weight: "200",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/MediumItalic.otf",
+      weight: "500",
+      style: "Italic",
+    },
+    {
+      path: "../../fonts/esrebound/Hairline.otf",
+      weight: "50",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/esrebound/HairlineItalic.otf",
+      weight: "50",
+      style: "Italic",
+    }
+  ]
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -19,8 +111,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${esRebound.variable} antialiased`}
       >
         {children}
       </body>
