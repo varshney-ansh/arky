@@ -4,7 +4,7 @@ import BrandLogo from "@/components/brandLogo/brandLogo";
 export default function Home() {
   return (
     <div>
-      <BrandLogo textSize={'4xl'} size={48} />
+      <BrandLogo textSize={24} size={32} />
     </div>
   );
 }
