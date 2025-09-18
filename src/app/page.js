@@ -1,12 +1,38 @@
 import MainChat from "@/components/MainChat/MainChat";
+import NavBar from "@/components/MainChat/NavBar";
+import SideBar from "@/components/MainChat/SideBar";
+
+
 import Image from "next/image";
 import BrandLogo from "@/components/brandLogo/brandLogo";
 
 export default function Home() {
   return (
-    <div>
-      <BrandLogo textSize={24} size={32} />
-      <MainChat />
-    </div>
+
+    <section>
+     
+
+
+<div className="flex">
+
+
+<div className="h-[100vh]">
+<SideBar/>
+
+</div>
+<div className="h-[100vh] w-[100%]  ">
+ <NavBar />
+<MainChat />
+ 
+ </div>
+</div>
+
+
+
+
+   </section>
+
+
+  
   );
 }
