@@ -9,6 +9,7 @@ export default function Mainpage( ) {
     const [Seting, setSeting] = useState(false); //hover
  
   return (
+<<<<<<< HEAD
     <section >
       <nav className="bg-white h-16 flex justify-between items-center relative shadow-md px-4">
         {/* Left menu */}
@@ -98,5 +99,10 @@ settings
    
 </div></div>
     </section>
+=======
+    <div>
+      <BrandLogo textSize={24} size={32} />
+    </div>
+>>>>>>> 860855e0 (+ app logo)
   );
 }
