@@ -7,10 +7,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-rebound: var(--font-rebound);
+  --font-rebound: var(--font-rebound);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
+
