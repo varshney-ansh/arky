@@ -1,9 +1,10 @@
 import Image from "next/image";
+import BrandLogo from "@/components/brandLogo/brandLogo";
 
 export default function Home() {
   return (
-    <div className="text-3xl font-medium">
-      Hello Arky!
+    <div>
+      <BrandLogo textSize={'4xl'} size={48} />
     </div>
   );
 }
