@@ -113,6 +113,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,200" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
       </head>
       <body
         className={`${geistSans.variable} ${esRebound.variable} antialiased`}

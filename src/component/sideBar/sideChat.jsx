@@ -24,12 +24,12 @@ export default function SideChat({ isOpen }) {
 
         <section className=" flex">
 
-            <div className={`bg-[#f9f9f9] h-[100%] rounded-2xl border-1 overflow-hidden min-w-0  flex flex-col mt-2 transition-[flex-basis,opacity] duration-700 ease-in-out
+            <div className={`bg-white h-[100%] rounded-2xl border-1 overflow-hidden min-w-0  flex flex-col mt-2 transition-[flex-basis,opacity] duration-700 ease-in-out
    
         ${isOpen ? "basis-90 opacity-100" : "basis-0 opacity-0 pointer-events-none"}`}>
                 {/* chat section*/}
 
-                <div className="p-4 flex-1  space-y-3 relative shrink-0" >
+                <div className="p-4 flex-1  overflow-y-auto  space-y-3 relative shrink-0" >
 
 
                     <div className=" place-self-end  w-53 font-sans whitespace-normal break-words hover:shadow-md  p-3 rounded-3xl  bg-gray-200 shrink-0"><span>hey we are dummy text for user
@@ -38,9 +38,10 @@ export default function SideChat({ isOpen }) {
 
 
 
-                    <div className="  p-3 place-self-start w-70 overflow-y-auto h-100 left-5 font-sans  shrink-0                  "
-                        onMouseEnter={() => setHovered(true)}
-                        onMouseLeave={() => setHovered(false)}             >
+                    <div className="  p-3 place-self-start w-70 h-100 left-5 font-sans  shrink-0                  "
+                        // onMouseEnter={() => setHovered(true)}
+                        // onMouseLeave={() => setHovered(false)}             
+                        >
                <div>
                            <details>
     <summary class=" font-sans cursor-pointer ">Reasoning</summary>
@@ -61,8 +62,8 @@ export default function SideChat({ isOpen }) {
                     Perferendis soluta odit molestias omnis error mollitia eaque dolorum ea iusto facilis! Explicabo dolore voluptatibus mollitia aut quae quia nulla facere illo, beatae ipsam iste corrupti exercitationem? Eius, labore ex!
                     Quod sint eius quidem facilis ratione voluptate beatae saepe dolorum corrupti voluptates, earum fuga doloribus ipsam, cumque autem delectus magni consequatur! Illum obcaecati magni ducimus neque esse debitis voluptates cum!</span>
                       </div>
-                        {hovered && (
-                            <div className="  flex  w-[40%]  rounded-md  mt-5  z-10 ">
+                        {true && (
+                            <div className="  flex  w-[40%]  rounded-md  mt-5  ">
                                 <div className="  w-10 h-10 flex items-center justify-center">
                                 {!liked && (
                                      <button className={` text-black px-1 pt-1 hover:bg-[#F2CD88] hover:rounded-[40%]`}  onClick={handleLike}>
@@ -108,3 +109,4 @@ export default function SideChat({ isOpen }) {
         </section>
     );
 }
+

@@ -10,9 +10,9 @@ export default function Mainpage( ) {
  
   return (
     <section >
-      <nav className="bg-white h-16 flex justify-between items-center relative shadow-md px-4">
+      <nav className="bg-[#f7f4f0] h-16 flex justify-between items-center shadow-md px-4">
         {/* Left menu */}
-        <div className="flex items-center space-x-4">
+        <div className="flex  space-x-4">
           <button className="rounded-xl border px-2 py-1 flex items-center justify-center hover:bg-gray-200"
            onClick={() => setIsOpen(!isOpen)}>
            <span className="material-symbols-outlined">
@@ -37,7 +37,7 @@ feedback
             
                 
       {show && (
-        <div className="absolute left-[-9] top-full mt-2 bg-white shadow-md text-black rounded-4xl  p-2 flex justify-center items-center ">
+        <div className="absolute left-[-9]  mt-2 bg-white shadow-md text-black rounded-xl  p-2 flex justify-center items-center ">
  
 <div >  feedback</div>
 
@@ -51,11 +51,11 @@ feedback
           <div className="bg-[#091f2C] text-white py-2 px-3 rounded-2xl h-10 cursor-pointer"
                onMouseEnter={() => setAbout(true)}
       onMouseLeave={() => setAbout(false)}>
-     <span class="material-symbols-outlined">
+     <span className="material-symbols-outlined">
 info
 </span>
                  {display&& (
-        <div className="absolute right-17 top-15  text-black bg-white shadow-md  rounded-4xl  p-2 flex justify-center items-center ">
+        <div className="absolute right-17 top-15  text-black bg-white shadow-md  rounded-xl  p-2 flex justify-center items-center ">
  
 <div > About</div>
 
@@ -68,14 +68,14 @@ info
              onMouseEnter={() => setSeting(true)}
       onMouseLeave={() => setSeting(false)}
           >
-      <span class="material-symbols-outlined">
+      <span className="material-symbols-outlined">
 settings
 </span>
 
             
                 
       {Seting && (
-        <div className="absolute  top-full mt-2 right-[-1]  bg-white shadow-md text-black  rounded-4xl p-2 flex justify-center items-center ">
+        <div className="absolute  top-full mt-2 right-[-1]  bg-white shadow-md text-black  rounded-xl p-2 flex justify-center items-center ">
  
 <div >Setting</div>
 
