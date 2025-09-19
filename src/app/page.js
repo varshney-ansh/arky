@@ -1,41 +1,46 @@
 "use client";
 import { useState } from "react";
 import SideChat from "@/component/sideBar/sideChat";
-import Image from "next/image";
-export default function Mainpage() {
-    const [show, setShow] = useState(false);
+import BrandLogo from "@/components/brandLogo/brandLogo";
+export default function Mainpage( ) {
+   const [isOpen, setIsOpen] = useState(true); //slide
+    const [show, setShow] = useState(false); //hover
+    const [display, setAbout] = useState(false); //hover
+    const [Seting, setSeting] = useState(false); //hover
  
-
   return (
-    <section>
+    <section >
       <nav className="bg-white h-16 flex justify-between items-center relative shadow-md px-4">
         {/* Left menu */}
         <div className="flex items-center space-x-4">
-          <button className="rounded-xl border px-2 py-1 flex items-center justify-center hover:bg-gray-200">
-            <span className="material-symbols-sharp">menu_open</span>
+          <button className="rounded-xl border px-2 py-1 flex items-center justify-center hover:bg-gray-200"
+           onClick={() => setIsOpen(!isOpen)}>
+           <span className="material-symbols-outlined">
+menu_open
+</span>
           </button>
-          <div>
-            <Image src="/logo-black.svg" width={40} height={40}/>
-          </div>
-          <div className="text-2xl font-bold font-rebound tracking-tighter ">Arky</div>
+          <BrandLogo size={32} textSize={24}/>
         </div>
 
         {/* Right menu */}
-        <div className="flex items-center space-x-4">
+        <div className="flex  space-x-3">
           {/* Feedback */}
           <div
-            className="relative bg-[#091f2C] text-white py-2 px-4 rounded-4xl h-10 flex items-center gap-2 cursor-pointer"
+            className="relative bg-[#091f2C] text-white py-2 px-3 rounded-2xl h-10 cursor-pointer"
              onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
           >
-            <span className="material-symbols-sharp">feedback</span>
+         <span className="material-symbols-outlined">
+feedback
+</span>
 
-            <span>Feedback</span>
+            
                 
       {show && (
-        <div className="absolute left-0 top-full mt-2 w-40 bg-white text-black p-3 rounded-4xl border-1 flex">
-  <div>   <span class="material-symbols-sharp">thumb_up</span></div>
-        <div><span class="material-symbols-sharp">thumb_down</span></div>
+        <div className="absolute left-[-9] top-full mt-2 bg-white shadow-md text-black rounded-4xl  p-2 flex justify-center items-center ">
+ 
+<div >  feedback</div>
+
         </div>
       )}
 
@@ -43,16 +48,50 @@ export default function Mainpage() {
           </div>
 
           {/* About */}
-          <div className="bg-[#091f2C] text-white py-2 px-4 rounded-4xl h-10 flex items-center gap-2 cursor-pointer">
-            <span className="material-symbols-sharp">info</span>
-            <span>About</span>
+          <div className="bg-[#091f2C] text-white py-2 px-3 rounded-2xl h-10 cursor-pointer"
+               onMouseEnter={() => setAbout(true)}
+      onMouseLeave={() => setAbout(false)}>
+     <span class="material-symbols-outlined">
+info
+</span>
+                 {display&& (
+        <div className="absolute right-17 top-15  text-black bg-white shadow-md  rounded-4xl  p-2 flex justify-center items-center ">
+ 
+<div > About</div>
+
+        </div>
+      )}
+           
+          </div>
+             <div
+            className="relative bg-[#091f2C] text-white py-2 px-3 rounded-2xl h-10  cursor-pointer"
+             onMouseEnter={() => setSeting(true)}
+      onMouseLeave={() => setSeting(false)}
+          >
+      <span class="material-symbols-outlined">
+settings
+</span>
+
+            
+                
+      {Seting && (
+        <div className="absolute  top-full mt-2 right-[-1]  bg-white shadow-md text-black  rounded-4xl p-2 flex justify-center items-center ">
+ 
+<div >Setting</div>
+
+        </div>
+      )}
+
+         
           </div>
         </div>
       </nav>
 
       {/* White board */}
-      <div className="flex gap-4 h-[calc(100vh-32px-52px)] px-4 "><SideChat />
-<div className=" bg-[#DAE5F9] w-[calc(100%-32px)] h-[100%] mt-2 border-1 shadow-2xl rounded-2xl border-black-200  overflow-auto ">
+   <div className="flex gap-4 h-[calc(100vh-32px-52px)] px-4">
+        <SideChat isOpen={isOpen} />
+<div className="flex-1 bg-[#DAE5F9] h-full mt-2 border-1 shadow-2xl
+                  rounded-2xl border-black-200 overflow-auto text-black">
   
 
 
