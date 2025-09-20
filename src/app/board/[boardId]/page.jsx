@@ -7,6 +7,7 @@ const BoardPage = async ({ params }) => {
     console.log("Board ID:", boardId);
     return (
         <div className='w-full h-screen'>
+            
             <ReactFlowProvider>
                 <WhiteBoard />
             </ReactFlowProvider>

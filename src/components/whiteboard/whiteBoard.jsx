@@ -19,8 +19,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import Image from 'next/image';
 import dagre from 'dagre';
-import { awsIcons } from '@/app/lib/awsicons';
-import { awsGroupIcons } from '@/app/lib/awsicons';
+import { awsIcons, awsGroupIcons } from '@/app/lib/awsicons';
 // Mapping mermaid labels to group icons
 const mermaidGroupToAwsIcon = {
     "vpc": "Virtual-private-cloud-VPC",
@@ -207,13 +206,13 @@ const LabeledGroupNode = memo(({ data, selected }) => {
                     background: '#3367d9',
                 }}
             />
-            <div className='flex items-start gap-4 '>
+            <div className='flex items-start'>
                 {data.image && (
                     <div className="">
                         <Image src={data.image} width={24} height={24} alt={data.label} />
                     </div>
                 )}
-                <div className="text-xs font-semibold text-gray-800 mt-1">
+                <div className="text-xs font-semibold text-gray-800 mt-1 px-2">
                     {data.label}
                 </div>
             </div>
@@ -303,6 +302,8 @@ function layoutGraph(nodes, edges, groupsList = [], direction = 'LR') {
     const layoutedLeafNodes = nodes.map((n) => {
         const pos = g.node(n.id) || { x: 0, y: 0 };
         const topLeft = { x: pos.x - NODE_W / 2, y: pos.y - NODE_H / 2 };
+        
+        // Use awsIcons for the node image
         const node = {
             id: n.id,
             type: 'serviceNode',
@@ -374,25 +375,43 @@ function layoutGraph(nodes, edges, groupsList = [], direction = 'LR') {
 ------------------- */
 function WhiteBoard() {
     const mermaidCode = `
-    graph LR
-subgraph corporate-data-center
-  OnPremFW[Firewall]
-  OnPremApp[Server-contents]
-end
-
-subgraph VPC-Prod
-  TGW[AWS-Transit-Gateway]
-  VPN[AWS-Site-to-Site-VPN]
-  DX[AWS-Direct-Connect]
-  ALB[Elastic-Load-Balancing-Application]
-  EC2[Amazon-EC2]
-  RDS[Amazon-RDS]
-end
-
-OnPremFW --> VPN --> TGW
-OnPremApp --> DX --> TGW
-TGW --> ALB --> EC2 --> RDS
-`;
+    flowchart LR
+      User[User]
+      R53[Amazon-Route-53]
+      CF[Amazon-CloudFront]
+      WAF[AWS-WAF]
+      ALB[Elastic-Load-Balancing]
+      S3[Amazon-Simple-Storage-Service]
+      
+      User --> R53 --> WAF --> CF
+      CF --> S3
+      CF --> ALB
+      
+      subgraph Region us-east-1
+        direction TB
+        subgraph VPC-Infrastructure[Amazon-Virtual-Private-Cloud]
+          direction LR
+          subgraph Public-subnet[Public-subnet]
+            ALB
+          end
+          subgraph Private-subnet[Private-subnet]
+            EC2[Amazon-EC2]
+            LAMBDA[AWS-Lambda]
+          end
+          subgraph Database-subnet[Private-subnet]
+            RDS[Amazon-RDS]
+            DDB[Amazon-DynamoDB]
+          end
+        end
+        S3
+      end
+      
+      ALB --> EC2
+      ALB --> LAMBDA
+      EC2 --> RDS
+      LAMBDA --> DDB
+      LAMBDA --> S3
+    `;
 
     const { nodes: initialNodes, edges: initialEdges } = useMemo(() => {
         const { nodes, edges, groups } = parseMermaid(mermaidCode);
