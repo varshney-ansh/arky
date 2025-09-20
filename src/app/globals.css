@@ -5,11 +5,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-<<<<<<< HEAD
   --font-rebound: var(--font-rebound);
   --color-light: #eeeeec;
-=======
->>>>>>> 79b12f07b7bd5ef3203ce501b5035de0b03ff341
 }
 
 body {

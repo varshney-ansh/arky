@@ -19,7 +19,8 @@ export default function Home() {
 
 
 <div className="h-[100vh] ">
-<SideBar isOpen={isOpen} />
+<SideBar isOpen={isOpen} onClose={() => setIsOpen(false)} />
+
 
 </div>
 <div className="h-screen w-[100%] flex flex-col justify-between transition-all duration-500  ">
