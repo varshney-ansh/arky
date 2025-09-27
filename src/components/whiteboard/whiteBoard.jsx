@@ -19,7 +19,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import Image from 'next/image';
 import dagre from 'dagre';
-import { awsIcons, awsGroupIcons } from '@/app/lib/awsicons';
+import { awsIcons, awsGroupIcons } from '@/lib/awsicons';
 // Mapping mermaid labels to group icons
 const mermaidGroupToAwsIcon = {
     "vpc": "Virtual-private-cloud-VPC",
@@ -435,7 +435,7 @@ function WhiteBoard() {
     );
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-full">
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

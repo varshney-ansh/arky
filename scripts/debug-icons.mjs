@@ -1,5 +1,5 @@
 // Debug script to check available icons
-import { awsIcons, resourceIcons, categoryIcons } from '../src/app/lib/awsicons';
+import { awsIcons, resourceIcons, categoryIcons } from '../src/lib/awsicons';
 
 console.log('AWS Service Icons:', Object.keys(awsIcons).length);
 console.log('Resource Icons:', Object.keys(resourceIcons).length);

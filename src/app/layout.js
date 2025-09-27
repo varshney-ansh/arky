@@ -114,9 +114,7 @@ export default function RootLayout({ children }) {
       <head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,200" />
       </head>
-      <body
-        className={`${geistSans.variable} ${esRebound.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${esRebound.variable} antialiased`}>
         {children}
       </body>
     </html>
