@@ -1,7 +1,16 @@
 "use client";
 import { useState } from "react";
 import SideChat from "@/component/sideBar/sideChat";
+"use client";
+import { useState } from "react";
+import SideChat from "@/component/sideBar/sideChat";
 import BrandLogo from "@/components/brandLogo/brandLogo";
+export default function Mainpage( ) {
+   const [isOpen, setIsOpen] = useState(true); //slide
+    const [show, setShow] = useState(false); //hover
+    const [display, setAbout] = useState(false); //hover
+    const [Seting, setSeting] = useState(false); //hover
+ 
 export default function Mainpage( ) {
    const [isOpen, setIsOpen] = useState(true); //slide
     const [show, setShow] = useState(false); //hover
