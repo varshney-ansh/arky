@@ -114,11 +114,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+<<<<<<< HEAD
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
       <body
         className={`${geistSans.variable} ${esRebound.variable} antialiased`}
       >
+=======
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,200" />
+      </head>
+      <body className={`${geistSans.variable} ${esRebound.variable} antialiased`}>
+>>>>>>> 13f84ed6f29b04cccac73fb9f2f25ee86d949d46
         {children}
       </body>
     </html>

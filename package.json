@@ -6,14 +6,23 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:awsicons": "node scripts/generate-awsicons.mjs"
   },
   "dependencies": {
     "@xyflow/react": "^12.8.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dagre": "^0.8.5",
+    "lucide-react": "^0.544.0",
     "next": "15.6.0-canary.8",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+<<<<<<< HEAD
     "tailwind-scrollbar": "^4.0.2"
+=======
+    "tailwind-merge": "^3.3.1"
+>>>>>>> 13f84ed6f29b04cccac73fb9f2f25ee86d949d46
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -21,7 +30,12 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.6.0-canary.8",
+<<<<<<< HEAD
     "postcss": "^8.5.6",
     "tailwindcss": "^4"
+=======
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.8"
+>>>>>>> 13f84ed6f29b04cccac73fb9f2f25ee86d949d46
   }
 }
